@@ -1,0 +1,14 @@
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.UI.exe.config
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.UI.exe
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.UI.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.BLL.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.Models.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.BLL.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.Models.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\obj\Debug\SGBank.UI.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\obj\Debug\SGBank.UI.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\obj\Debug\SGBank.UI.csproj.CopyComplete
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\obj\Debug\SGBank.UI.exe
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\obj\Debug\SGBank.UI.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.Data.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.UI\bin\Debug\SGBank.Data.pdb

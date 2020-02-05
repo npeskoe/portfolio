@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vending Machine</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Vending Machine</h1>
+        <hr />
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row" id="vendTableDiv">
+                </div>
+            </div>
+            <div class="col col-md-4">
+
+                <div class="form-group">
+                    <div class="col-md-8 text-center">
+                        <h3>Total $ In</h3>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-8 text-center">
+                        <input type="text" id="change-display" class="form-control" value="" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-2">
+                        <button type="btn-default" class="form-control" id="add-dollar-button">Add
+                            Dollar</button>
+                    </div>
+                    <div class="col-md-5 mb-2">
+                        <button type="btn-default" class="form-control" id="add-quarter-button">Add Quarter</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-2">
+                        <button type="btn-default" class="form-control" id="add-dime-button">Add Dime</button>
+                    </div>
+                    <div class="col-md-5 mb-2">
+                        <button type="btn-default" class="form-control" id="add-nickel-button">Add Nickel</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <h3>Messages</h3>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-8">
+                        <input type="text" id="depositDisplay" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="item" class="col-md-2 control-label">Item:</label>
+                    <div class="col-md-6 mb-2">
+                        <input type="text" id="itemDisplay" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mr-2 mb-2">
+                        <button type="btn-default" class="form-control" id="purchase-button">Make Purchase</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <h3>Change</h3>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-8">
+                        <input type="text" id="changeDisplay" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mr-2 mb-2">
+                        <button type="btn-default" class="form-control" id="change-return">Change Return</button>
+                    </div>
+                    <hr />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.BLL.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.BLL.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.Data.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.Models.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.Data.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\bin\Debug\SGBank.Models.pdb
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\obj\Debug\SGBank.BLL.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\obj\Debug\SGBank.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\obj\Debug\SGBank.BLL.csproj.CopyComplete
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\obj\Debug\SGBank.BLL.dll
+C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\SGBank.UI\SGBank.BLL\obj\Debug\SGBank.BLL.pdb
