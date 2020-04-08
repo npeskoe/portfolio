@@ -4,3 +4,9 @@ C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.csproj.CoreCompileInputs.cache
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.dll
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\bin\Debug\Flooring.Models.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\bin\Debug\Flooring.Models.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.Models\obj\Debug\Flooring.Models.pdb

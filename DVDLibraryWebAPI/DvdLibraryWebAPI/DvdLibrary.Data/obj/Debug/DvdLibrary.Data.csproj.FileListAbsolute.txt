@@ -1,0 +1,15 @@
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\obj\Debug\DvdLibrary.Data.csprojAssemblyReference.cache
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\obj\Debug\DvdLibrary.Data.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Data.dll
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Data.pdb
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Models.dll
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Models.pdb
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\obj\Debug\DvdLibrary.Data.csproj.CopyComplete
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\obj\Debug\DvdLibrary.Data.dll
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\obj\Debug\DvdLibrary.Data.pdb
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Data.dll.config
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\EntityFramework.dll
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\DvdLibrary.Models.dll.config
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\EntityFramework.xml
+C:\Users\Nick\Desktop\DVDLibraryWeb\DvdLibraryWebAPI\DvdLibrary.Data\bin\Debug\EntityFramework.SqlServer.xml

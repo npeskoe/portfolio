@@ -9,3 +9,14 @@ C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.csproj.CopyComplete
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.dll
 C:\Users\Nick\Documents\Repos\online-net-npeskoe\Summatives\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.BLL.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.BLL.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.Data.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.Models.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.Data.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\bin\Debug\Flooring.Models.pdb
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.csproj.CopyComplete
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.dll
+C:\Users\Nick\Documents\Repos\portfolio\Flooring.UI\Flooring.BLL\obj\Debug\Flooring.BLL.pdb

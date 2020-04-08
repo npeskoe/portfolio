@@ -39,8 +39,10 @@ namespace Flooring.Data
 
                         Order order = new Order();
 
-                        string iDate = file.Name.Substring(7, 8);
-                        order.OrderDate = DateTime.ParseExact(iDate, format, CultureInfo.InvariantCulture);
+                        string iDate = file.Name.Substring(7,8);
+
+                        order.OrderDate = DateTime.ParseExact(iDate, "MMddyyyy", CultureInfo.InvariantCulture);
+
                         string[] columns = line.Split(',');
                         order.OrderNumber = int.Parse(columns[0]);
                         order.CustomerName = columns[1];

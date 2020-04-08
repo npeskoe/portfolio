@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DVD Library</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul class="list-group" id="errorMessages"></ul>
+    <div class="container" id="searchBar">
+        <div class="row">
+                <div class="col col-md-2">
+                    <button type="button" id="create-dvd" class="btn btn-secondary">
+                        Create DVD
+                    </button>
+                </div>
+            <div class="col col-md-2"></div>
+                <form class="form-inline" role="form" id="dvd-search-form">
+                    <div class="form-group">
+                        <div class="col">
+                            <button type="button" id="search-dvd-button" class="btn btn-secondary">
+                                Search
+                        </div>
+                    </div>
+                    <div class="form-group">    
+                            <div class="col">
+                                <select id="dvdCategory" required >
+                                    <option disabled selected value="">Search Category</option>
+                                    <option value="title">Title</option>
+                                    <option value="release">Release Year</option>
+                                    <option value="director">Director Name</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="col">
+                                <input class="form-control" id="searchTerm" type="text" placeholder="Search Term" label="Search"
+                                    required>
+                            </div>
+                        </div>
+                    </div>    
+                </form>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-10 container-fluid">
+                <div id="dvdTableDiv">
+                    <table id="dvdTable" class="table table-hover">
+                        <tr>
+                            <th width="20%">Title</th>
+                            <th width="20%">Release Date</th>
+                            <th width="15%">Director</th>
+                            <th width="15%">Rating</th>
+                            <th width="5"></th>
+                        </tr>
+                        <tbody id="contentRows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div id="edit-dvd-table">
+                <h2 id="editDVDTitle">Edit DVD:</h2>
+                <hr>
+                </hr>
+
+                <form class="form-horizontal" role="form" id="edit-dvd-form">
+                    <div class="form-group">
+                        <label for="edit-dvd-title" class="col-md-6 control-label">
+                            Dvd Title:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="edit-dvd-title" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-release-year" class="col-md-6 control-label">
+                            Release Year:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="edit-release-year" pattern="[0-9]{4}"
+                                required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-director" class="col-md-6 control-label">
+                            Director:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="edit-director" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-rating" class="col-md-6 control-label">
+                            Rating:
+                        </label>
+
+                        <div class="col-md-2">
+                            <select class="custom-select" id="ratingGroupSelect">
+                                <option selected value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-notes" class="col-md-6 control-label">
+                            Notes:
+                        </label>
+
+                        <div class="input-group input-group-lg col-md-6">
+                            <input type="text" class="form-control" id="edit-notes" required />
+                        </div>
+                    </div>
+                    <input type="hidden" id="edit-dvd-id">
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <button type="button" id="cancel-edit-button" class="btn btn-secondary mr-3">
+                                Cancel
+                            </button>
+                            <button type="button" id="edit-changes-button" class="btn btn-secondary">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+            </div>
+            </form>
+
+            <div class="col-md-12">
+                <div id="create-dvd-table">
+                    <h2>Create DVD</h2>
+                    <hr>
+                    </hr>
+
+                    <form class="form-horizontal" role="form" id="create-dvd-form">
+                        <div class="form-group">
+                            <label for="create-dvd-title" class="col-md-6 control-label">
+                                Dvd Title:
+                            </label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="create-dvd-title" placeholder="Enter Title"
+                                    required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="create-release-year" class="col-md-6 control-label">
+                                Release Year:
+                            </label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="create-release-year"
+                                    placeholder="Enter Release Year" pattern="[0-9]{4}" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="create-director" class="col-md-6 control-label">
+                                Director:
+                            </label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="create-director"
+                                    placeholder="Enter Director" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="create-rating" class="col-md-6 control-label">
+                                Rating:
+                            </label>
+
+                            <div class="col-md-2">
+                                <select class="custom-select" id="createRatingSelect">
+                                    <option value="">Choose Rating</option>
+                                    <option value="G">G</option>
+                                    <option value="PG">PG</option>
+                                    <option value="PG-13">PG-13</option>
+                                    <option value="R">R</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="create-notes" class="col-md-6 control-label">
+                                Notes:
+                            </label>
+
+                            <div class="input-group input-group-lg col-md-6">
+                                <input type="text" class="form-control" id="create-notes" placeholder="Enter Note" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button type="button" id="cancel-create-button" class="btn btn-secondary">
+                                    Cancel
+                                </button>
+                                <button type="button" id="submit-dvd" class="btn btn-secondary">
+                                    Create DVD
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="dVDDet">
+            <h2 id="dvdTitle"></h2>
+            <hr></hr>
+                <div class="col-md-8">
+                    <div id="viewDVDDetails">
+                        <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Release Year:</th>
+                                <td id="relYear"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Director:</th>
+                                <td id="dir"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rating:</th>
+                                <td id="rate"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Notes:</th>
+                                <td id="note"></td>
+                            </tr>
+                        </tbody>
+                        </table>                        
+                    </div>
+            </div>
+        </div>
+        
+
+        </div>
+
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+</body>
+
+</html>
