@@ -1,0 +1,54 @@
+﻿@model CarDealership.UI.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "EditUser";
+}
+<div class="row" id="space"></div>
+<h2>Edit User</h2>
+<div class="row" id="space"></div>
+@using (Html.BeginForm("EditUser", "Admin", FormMethod.Post))
+{
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <div class="col-form-label">First Name</div>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => Model.FirstName)</span>
+
+        </div>
+        <div class="form-group col-md-4">
+            <div class="col-form-label">Last Name</div>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => Model.LastName)</span>
+
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <div class="col-form-label">Email</div>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => Model.Email)</span>
+
+        </div>
+        <div class="form-group col-md-4">
+            <div class="col-form-label">Role</div>
+            @Html.DropDownListFor(m => m.Role, Model.Roles, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <div class="col-form-label">Password</div>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => Model.Password)</span>
+
+        </div>
+        <div class="form-group col-md-4">
+            <div class="col-form-label">Confirm Password</div>
+            @Html.PasswordFor(m => m.PasswordConfirm, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(m => Model.PasswordConfirm)</span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("EditUser")'" />
+    </div>
+}

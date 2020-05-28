@@ -1,0 +1,59 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "InventoryReport";
+}
+
+<div class="row" id="space"></div>
+
+<h2>Inventory Report</h2>
+<div class="row" id="space"></div>
+<h5>New Vehicles</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Year</th>
+            <th scopt="col">Make</th>
+            <th scopt="col">Model</th>
+            <th scopt="col">Count</th>
+            <th scopt="col">Stock Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var newVehicle in Model.NewVehicles)
+        {
+            <tr>
+                <td>@newVehicle.YearBuilt</td>
+                <td>@newVehicle.MakeName</td>
+                <td>@newVehicle.ModelName</td>
+                <td>@newVehicle.Count</td>
+                <td>$@newVehicle.StockValue</td>
+            </tr>
+        }
+    <thead>
+</table>
+<h5>Used Vehicles</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Year</th>
+            <th scopt="col">Make</th>
+            <th scopt="col">Model</th>
+            <th scopt="col">Count</th>
+            <th scopt="col">Stock Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usedVehicle in Model.UsedVehicles)
+        {
+            <tr>
+                <td>@usedVehicle.YearBuilt</td>
+                <td>@usedVehicle.MakeName</td>
+                <td>@usedVehicle.ModelName</td>
+                <td>@usedVehicle.Count</td>
+                <td>$@usedVehicle.StockValue</td>
+            </tr>
+        }
+    <thead>
+</table>
+

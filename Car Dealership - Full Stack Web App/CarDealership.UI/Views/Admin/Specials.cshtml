@@ -1,0 +1,96 @@
+﻿@model CarDealership.Models.Tables.SalesSpecials
+
+@{
+    ViewBag.Title = "Specials";
+}
+
+<div class="row" id="space"></div>
+
+<h2>Specials</h2>
+
+<div class="row" id="space"></div>
+<div class="container" id="specialform">
+    @using (Html.BeginForm("InsertSpecial", "Admin", FormMethod.Post))
+    {
+    <div class="form-group">
+        <div for="specialname">Title</div>
+        @Html.TextBoxFor(m => m.SpecialName, new { @class = "form-control" })
+        <span class="text-danger">@Html.ValidationMessageFor(m => Model.SpecialName)</span>
+
+    </div>
+    <div class="form-group">
+        <div for="specialdescription">Description</div>
+        @Html.TextAreaFor(m => m.SpecialDescription, new { @class = "form-control" })
+        <span class="text-danger">@Html.ValidationMessageFor(m => Model.SpecialDescription)</span>
+
+    </div>
+        <div class="form-group">
+            <input type="submit" value="Save" id="savemake" class="btn btn-primary" onclick="location.href='@Url.Action("InsertCarMake")'" />
+        </div>
+    }
+</div>
+<div class="container">
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="container" id="specialrows">
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        GetSalesSpecials();
+    });
+
+    function GetSalesSpecials() {
+
+        var specials = $('#specialrows');
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55044/specials/',
+            success: function (data, status) {
+                $.each(data, function (index, special) {
+                    var specialID = special.SpecialID;
+                    var specialname = special.SpecialName;
+                    var specialdescription = special.SpecialDescription;
+
+
+                    row = '<div class="container" id="specials">'
+                    row += '<table id="specialstable">'
+                    row += '<tr>'
+                    row += '<td>' + '<img src="/Images/offer.png" id="specialsstock" />' + '</td>';
+                    row += '<td>' + '<span id="details">' + specialname + '</span>' + '</td>';
+                    row += '<td>' + specialdescription + '</td>';
+                    row += '<td><button type="button" class="btn btn-danger"><a onclick="Delete(' + specialID + ')">Delete</a></button></td>';
+                    row += '</tr>';
+                    row += '</table>';
+
+                    specials.append(row);
+                });
+            },
+            error: function () {
+                $('#errorMessages')
+                    .append($('<li>')
+                        .attr({ class: 'list-group-item list-group-item-danger' })
+                        .text('Error calling web service. Please try again later.'));
+            }
+        });
+    }
+
+    function Delete(specialID) {
+
+        var c = confirm("Are you sure you want to delete this special?")
+
+        if (c) {
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:55044/specials/' + specialID,
+                success: function (status) {
+                    window.location = "/admin/specials";
+                }
+            })
+        }
+        
+    }
+
+</script>

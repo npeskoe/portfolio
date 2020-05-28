@@ -1,0 +1,89 @@
+﻿@model CarDealership.Models.Queries.CarMakeItem
+
+@{
+    ViewBag.Title = "Makes";
+}
+<div class="row" id="space"></div>
+
+<h2>Makes</h2>
+
+<div class="row" id="space"></div>
+<div class="container" id="carmakeform">
+    @using (Html.BeginForm("InsertCarMake", "Admin", FormMethod.Post))
+    {
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="makename">New Make</label>
+                @Html.TextBoxFor(m => m.MakeName, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(m => Model.MakeName)</span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" id="savemake" class="btn btn-primary" onclick="location.href='@Url.Action("InsertCarMake")'" />
+            </div>
+        </div>
+    }
+</div>
+<div class="col-md-4">
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="container" id="vehiclemakes">
+            <table class="table" id="vehicletable">
+                <thead>
+                    <tr>
+                        <th scope="col">Make</th>
+                        <th scope="col">Date Added</th>
+                        <th scope="col">User</th>
+                    </tr>
+                <thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        loadVehicleMakes();
+    });
+
+    function loadVehicleMakes() {
+
+        var vehicletable = $('#vehicletable');
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55044/vehicles/makes',
+            success: function (data, status) {
+                $.each(data, function (index, make) {
+                    var makename = make.MakeName;
+                    var dateadded = make.DateAdded;
+                    var useremail = make.Email;
+
+                    var date = dateadded.split('T')[0]
+
+                    var d = new Date(date);
+
+                    var month = d.getMonth() + 1
+                    var day = d.getDate() + 1
+                    var year = d.getFullYear()
+
+                    row = '<tbody>'
+                    row = '<tr>'
+                    row += '<td>' + makename + '</td>';
+                    row += '<td>' + month + '/' + day + '/' + year + '</td>';
+                    row += '<td>' + useremail + '</td>';
+                    row += '</tr>'
+                    row += '</tbody>'
+                    row += '</table>'
+
+                    vehicletable.append(row);
+                });
+            },
+            error: function () {
+                $('#errorMessages')
+                    .append($('<li>')
+                        .attr({ class: 'list-group-item list-group-item-danger' })
+                        .text('Error calling web service. Please try again later.'));
+            }
+        });
+    }
+</script>

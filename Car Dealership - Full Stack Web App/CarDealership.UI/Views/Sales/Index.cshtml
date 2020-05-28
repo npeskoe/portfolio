@@ -1,0 +1,194 @@
+﻿@model IEnumerable<CarDealership.Models.Queries.VehicleItem>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row" id="space"></div>
+
+<h2>Sales</h2>
+
+<div class="row" id="space"></div>
+<div class="container" id="availablevehiclesearch">
+    <div class="col-md-8 col-lg-12 col-xl-12">
+        <div class="col-xl-12" id="searchlabel">
+            <p>Quick Search</p>
+        </div>
+        <div class="col">
+            <form>
+                <div class="row">
+                    <div class="col" id="makemodelyearsearch">
+                        <div class="form-group">
+                            <label for="makemodelyearinput"></label>
+                            <input type="text" id="makemodelyear" class="form-control" placeholder="Enter make, model, or year" />
+                        </div>
+                    </div>
+                    <div class="col" id="pricesearch">
+                        <div class="form-group form-inline">
+                            <label for="newvehicleprice">Price</label>
+                            <select id="minprice" class="form-control">
+                                <option value="0">No Min</option>
+                                <option value="10000">$10,000</option>
+                                <option value="15000">$15,000</option>
+                                <option value="20000">$20,000</option>
+                                <option value="25000">$25,000</option>
+                                <option value="30000">$30,000</option>
+                                <option value="35000">$35,000</option>
+                                <option value="40000">$40,000</option>
+                                <option value="45000">$45,000</option>
+                                <option value="50000">$50,000</option>
+                                <option value="55000">$55,000</option>
+                                <option value="60000">$60,000</option>
+                            </select>
+                            <select id="maxprice" class="form-control">
+                                <option value="0">No Max</option>
+                                <option value="10000">$10,000</option>
+                                <option value="15000">$15,000</option>
+                                <option value="20000">$20,000</option>
+                                <option value="25000">$25,000</option>
+                                <option value="30000">$30,000</option>
+                                <option value="35000">$35,000</option>
+                                <option value="40000">$40,000</option>
+                                <option value="45000">$45,000</option>
+                                <option value="55000">$55,000</option>
+                                <option value="60000">$60,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col" id="yearsearch">
+                        <div class="form-group form-inline">
+                            <label for="newvehicleyear">Year</label>
+                            <select id="minyear" class="form-control">
+                                <option value="0">No Min</option>
+                                <option value="2000">2000</option>
+                                <option value="2005">2005</option>
+                                <option value="2010">2010</option>
+                                <option value="2015">2015</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <select id="maxyear" class="form-control">
+                                <option value="0">No Max</option>
+                                <option value="2000">2000</option>
+                                <option value="2005">2005</option>
+                                <option value="2010">2010</option>
+                                <option value="2015">2015</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="searchbutton">
+                    <div class="col">
+                        <button type="button" id="availablevehiclebutton" class="btn-btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="container" id="availablevehicles">
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+    });
+
+    $('#availablevehiclebutton').click(function () {
+
+        loadAvailableVehicles();
+    })
+
+    function loadAvailableVehicles() {
+
+        var availablevehicles = $('#availablevehicles');
+
+        availablevehicles.empty();
+
+        var searchterm = $('#makemodelyear').val();
+
+        if (searchterm == '') {
+            searchterm = '0';
+        }
+
+        var minPrice = $('#minprice').val();
+
+        var maxPrice = $('#maxprice').val();
+
+        var minYear = $('#minyear').val();
+
+        var maxYear = $('#maxyear').val();
+
+        var imagePath = '@Url.Content("~/images/")';
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55044/vehicleinventory/all/' + searchterm +'/' + minPrice + '/' + maxPrice + '/' + minYear + '/' + maxYear,
+            success: function (data, status) {
+                $.each(data, function (index, vehicle) {
+                    var vehicleid = vehicle.VehicleID;
+                    var yearbuilt = vehicle.YearBuilt;
+                    var makename = vehicle.MakeName;
+                    var modelname = vehicle.ModelName;
+                    var imagefilename = vehicle.ImageFileName;
+                    var bodytypename = vehicle.BodyTypeName;
+                    var transmissiontypename = vehicle.TransmissionTypeName;
+                    var extcolorname = vehicle.ExtColorName;
+                    var intcolorname = vehicle.IntColorName;
+                    var mileage = vehicle.Mileage;
+                    var vinnumer = vehicle.VINNumber;
+                    var salesprice = vehicle.SalesPrice;
+                    var msrp = vehicle.MSRP;
+
+                    var row = '<container id=availablevehicle>';
+
+                    row = '<container id=floatleft>';
+                    row += '<table>';
+                    row += '<tr>';
+                    row += '<th>' + yearbuilt + ' ' + makename + ' ' + modelname + '</th>';
+                    row += '<tr>';
+                    row += '<td>' + '<img class="d-inline-block align-top" src="' + imagePath + imagefilename + '" />' + '</td>';
+                    row += '</table>';
+                    row += '</div>'
+
+                    row += '<container id=floatright>';
+                    row += '<table id=table2>';
+                    row += '<tr>';
+                    row += '<th>' + " " + '</th>';
+                    row += '<td>' + '<span id="details">' + 'Body Style: ' + '</span>' + ' ' + bodytypename + '</td>';
+                    row += '<td>' + '<span id="details">' + 'Interior: ' + '</span>' + ' ' +  intcolorname + '</td>';
+                    row += '<td>' + '<span id="details">' + 'Sales Price: ' + '</span>' + ' ' + '$' + salesprice + '</td>';
+                    row += '<tr>'
+                    row += '<td>'
+                    row += '<td>' + '<span id="details">' + 'Trans: ' + '</span>' + ' ' + transmissiontypename + '</td>';
+                    row += '<td>' + '<span id="details">' + 'Mileage: ' + '</span>' + ' ' + mileage + '</td>';
+                    row += '<td>' + '<span id="details">' + 'MSRP: ' + '</span>' + ' ' + '$' + msrp + '</td>';
+                    row += '<tr>'
+                    row += '<td>' + '' + '</td>';
+                    row += '<td>' + '<span id="details">' + 'Color: ' + '</span>' + ' ' + extcolorname + '</td>';
+                    row += '<td>' + '<span id="details">' + 'VIN #: ' + '</span>' + ' ' + vinnumer + '</td>';
+                    row += '<td><button onclick="purchase(' + vehicleid + ')">Purchase</button></td>';
+                    row += '<tr>'
+                    row += '</table>';
+                    row += '</div>'
+
+                    availablevehicles.append(row);
+
+                });
+            },
+            error: function () {
+                $('#errorMessages')
+                    .append($('<li>')
+                        .attr({ class: 'list-group-item list-group-item-danger' })
+                        .text('Error calling web service. Please try again later.'));
+            }
+        });
+    }
+    function purchase(vehicleid) {
+        window.location = "/sales/purchase/" + vehicleid;
+    }
+</script>

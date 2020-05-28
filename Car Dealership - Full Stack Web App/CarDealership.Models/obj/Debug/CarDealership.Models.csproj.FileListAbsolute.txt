@@ -1,0 +1,15 @@
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\CarDealership.Models.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\CarDealership.Models.pdb
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\Dapper.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\Dapper.xml
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.csproj.CopyComplete
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.pdb
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.csprojAssemblyReference.cache
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\ExpressiveAnnotations.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\ExpressiveAnnotations.MvcUnobtrusive.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\ExpressiveAnnotations.xml
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\ExpressiveAnnotations.MvcUnobtrusive.xml
+C:\Users\Nick\Desktop\CarDealership\CarDealership.Models\bin\Debug\Newtonsoft.Json.xml

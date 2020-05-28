@@ -1,0 +1,187 @@
+﻿@model CarDealership.UI.Models.PurchaseSalesInfoViewModel
+
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<div class="row" id="space"></div>
+<div class="row">
+    <div class="col-xl-12">
+        <h2>Purchase Vehicle</h2>
+    </div>
+</div>
+<div class="row" id="space"></div>
+<div class="container" id="modeldetails">
+        <div class="row" id="yearmakemodel">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <span id="details">@Model.YearBuilt @Model.MakeName @Model.ModelName</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <img src="@Url.Content("~/Images/" + Model.ImageFileName)" id="modeldetailimage" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <p><span id="details">Body Style: </span>@Model.BodyTypeName</p>
+                <p><span id="details">Trans: </span>@Model.TransmissionTypeName</p>
+                <p><span id="details">Color: </span>@Model.IntColorName</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <p><span id="details">Interior: </span>@Model.IntColorName</p>
+                <p><span id="details">Mileage: </span>@Model.Mileage</p>
+                <p><span id="details">VIN #: </span>@Model.VINNumber</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5">
+                <p><span id="details">Sale Price: </span>@Model.SalesPrice.ToString("c")</p>
+                <p><span id="details">MSRP: </span>@Model.MSRP.ToString("c")</p>
+            </div>
+        </div>
+        <div class="row" id="space"></div>
+        <div class="row">
+            <div class="col-xl-2">
+            </div>
+            <div class="col-xl-10">
+                <p><span id="details">Description: </span>@Model.VehicleDescription</p>
+            </div>
+        </div>
+</div>
+
+<div class="row" id="space"></div>
+<h2>Sales Information</h2>
+<div class="row" id="space"></div>
+<div class="container">
+        @using (Html.BeginForm("InsertSalesInformation", "Sales", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => Model.VehicleID)
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Name</div>
+                    @Html.TextBoxFor(m => Model.CustomerName, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.CustomerName)</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Phone</div>
+                    @Html.TextBoxFor(m => Model.CustomerPhone, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Email</div>
+                    @Html.TextBoxFor(m => Model.CustomerEmail, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.CustomerEmail)</span>
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Street 1</div>
+                    @Html.TextBoxFor(m => Model.CustomerStreet1, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.CustomerStreet1)</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Street 2</div>
+                    @Html.TextBoxFor(m => Model.CustomerStreet2, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">City</div>
+                    @Html.TextBoxFor(m => Model.CustomerCity, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.CustomerCity)</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">State</div>
+                    @{ var states = new List<SelectListItem>
+
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                new SelectListItem { Value = "AL", Text = "Alabama" },
+                                                                                                                                                                                                new SelectListItem { Value = "AK", Text = "Alaska" },
+                                                                                                                                                                                                new SelectListItem { Value = "AZ", Text = "Arizona" },
+                                                                                                                                                                                                new SelectListItem { Value = "AR", Text = "Arkansas" },
+                                                                                                                                                                                                new SelectListItem { Value = "CA", Text = "California" },
+                                                                                                                                                                                                new SelectListItem { Value = "CO", Text = "Colorado" },
+                                                                                                                                                                                                new SelectListItem { Value = "CT", Text = "Connecticut" },
+                                                                                                                                                                                                new SelectListItem { Value = "DE", Text = "Delaware" },
+                                                                                                                                                                                                new SelectListItem { Value = "FL", Text = "Florida" },
+                                                                                                                                                                                                new SelectListItem { Value = "GA", Text = "Georgia" },
+                                                                                                                                                                                                new SelectListItem { Value = "HI", Text = "Hawaii" },
+                                                                                                                                                                                                new SelectListItem { Value = "ID", Text = "Idaho" },
+                                                                                                                                                                                                new SelectListItem { Value = "IL", Text = "Illinois" },
+                                                                                                                                                                                                new SelectListItem { Value = "IN", Text = "Indiana" },
+                                                                                                                                                                                                new SelectListItem { Value = "IA", Text = "Iowa" },
+                                                                                                                                                                                                new SelectListItem { Value = "KS", Text = "Kansas" },
+                                                                                                                                                                                                new SelectListItem { Value = "KY", Text = "Kentucky" },
+                                                                                                                                                                                                new SelectListItem { Value = "LA", Text = "Louisiana" },
+                                                                                                                                                                                                new SelectListItem { Value = "ME", Text = "Maine" },
+                                                                                                                                                                                                new SelectListItem { Value = "MD", Text = "Maryland" },
+                                                                                                                                                                                                new SelectListItem { Value = "MA", Text = "Massachusetts" },
+                                                                                                                                                                                                new SelectListItem { Value = "MI", Text = "Michigan" },
+                                                                                                                                                                                                new SelectListItem { Value = "MN", Text = "Minnesota" },
+                                                                                                                                                                                                new SelectListItem { Value = "MS", Text = "Mississippi" },
+                                                                                                                                                                                                new SelectListItem { Value = "MO", Text = "Missouri" },
+                                                                                                                                                                                                new SelectListItem { Value = "MT", Text = "Montana" },
+                                                                                                                                                                                                new SelectListItem { Value = "NC", Text = "North Carolina" },
+                                                                                                                                                                                                new SelectListItem { Value = "ND", Text = "North Dakota" },
+                                                                                                                                                                                                new SelectListItem { Value = "NE", Text = "Nebraska" },
+                                                                                                                                                                                                new SelectListItem { Value = "NV", Text = "Nevada" },
+                                                                                                                                                                                                new SelectListItem { Value = "NH", Text = "New Hampshire" },
+                                                                                                                                                                                                new SelectListItem { Value = "NJ", Text = "New Jersey" },
+                                                                                                                                                                                                new SelectListItem { Value = "NM", Text = "New Mexico" },
+                                                                                                                                                                                                new SelectListItem { Value = "NY", Text = "New York" },
+                                                                                                                                                                                                new SelectListItem { Value = "OH", Text = "Ohio" },
+                                                                                                                                                                                                new SelectListItem { Value = "OK", Text = "Oklahoma" },
+                                                                                                                                                                                                new SelectListItem { Value = "OR", Text = "Oregon" },
+                                                                                                                                                                                                new SelectListItem { Value = "PA", Text = "Pennsylvania" },
+                                                                                                                                                                                                new SelectListItem { Value = "RI", Text = "Rhode Island" },
+                                                                                                                                                                                                new SelectListItem { Value = "SC", Text = "South Carolina" },
+                                                                                                                                                                                                new SelectListItem { Value = "SD", Text = "South Dakota" },
+                                                                                                                                                                                                new SelectListItem { Value = "TN", Text = "Tennessee" },
+                                                                                                                                                                                                new SelectListItem { Value = "TX", Text = "Texas" },
+                                                                                                                                                                                                new SelectListItem { Value = "UT", Text = "Utah" },
+                                                                                                                                                                                                new SelectListItem { Value = "VT", Text = "Vermont" },
+                                                                                                                                                                                                new SelectListItem { Value = "VA", Text = "Virginia" },
+                                                                                                                                                                                                new SelectListItem { Value = "WA", Text = "Washington" },
+                                                                                                                                                                                                new SelectListItem { Value = "WV", Text = "West Virginia" },
+                                                                                                                                                                                                new SelectListItem { Value = "WI", Text = "Wisconsin" },
+                                                                                                                                                                                                new SelectListItem { Value = "WY", Text = "Wyoming" }
+                                                                                                                                                                                                                                                                                                };
+                    }
+                    @Html.DropDownListFor(m => m.CustomerState, states, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Zip Code</div>
+                    @Html.TextBoxFor(m => Model.CustomerZip, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.CustomerZip)</span>
+
+                </div>
+            </div>
+            <hr />
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Purchase Price</div>
+                    @Html.TextBoxFor(m => Model.PurchasePrice, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => Model.PurchasePrice)</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="col-form-label">Purchase Type</div>
+                    @{ var purchaseTypes = new List<SelectListItem>
+
+                                                                                                     {                                                                                      new SelectListItem { Value = "1", Text = "Bank Finance" },
+                                                                                                                                                                                            new SelectListItem { Value = "2", Text = "Cash" },
+                                                                                                                                                                                            new SelectListItem { Value = "3", Text = "Dealer Finance" }
+
+
+
+                                                                                                                                                                               };
+                    }
+                    @Html.DropDownListFor(m => m.PurchaseTypeID, purchaseTypes, new { @class = "form-control" })
+                </div>
+            </div>
+        <div class="form-group">
+            <input type="submit" value="Save" id="submit" class="btn btn-primary" />
+        </div>
+
+}
+    </div>

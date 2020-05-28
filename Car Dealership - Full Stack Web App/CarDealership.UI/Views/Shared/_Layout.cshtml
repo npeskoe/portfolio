@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Car Dealership</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="~/"><img src="~/Content/home-icon.png "></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="collapse navbar-collapse nav navbar-nav" id="navbarSupportedContent">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("New Inventory", "New", "Inventory")</li>
+                    <li>@Html.ActionLink("Used Inventory", "Used", "Inventory")</li>
+                    <li>@Html.ActionLink("Specials", "Specials", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sales", "Index", "Sales")</li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <div class="dropdown">
+                        <button type="button" class=" btn btn-link nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-xl-right" role="menu" id="dropdownMenu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" @Html.ActionLink("Vehicles", "Vehicles", "Admin", null, new { @class = "nav-link" })</a></li>
+                            <li><a class="dropdown-item" @Html.ActionLink("Users", "Users", "Admin", null, new { @class = "nav-link" })</a></li>
+                            <li><a class="dropdown-item" @Html.ActionLink("Makes", "Makes", "Admin", null, new { @class = "nav-link" })</a></li>
+                            <li><a class="dropdown-item" @Html.ActionLink("Models", "Models", "Admin", null, new { @class = "nav-link" })</a></li>
+                            <li><a class="dropdown-item" @Html.ActionLink("Specials", "Specials", "Admin", null, new { @class = "nav-link" })</a></li>
+                            <li><a class="dropdown-item" @Html.ActionLink("Reports", "Reports", "Admin", null, new { @class = "nav-link" })</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Car Dealership Application</p>
+        </footer>
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

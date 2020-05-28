@@ -1,0 +1,351 @@
+﻿body {
+    padding-bottom: 20px;
+    margin:0;
+}
+
+header h1{
+    margin:0px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+nav li {
+    padding-right: 30px;
+    text-align: center;
+}
+
+nav .navbar-nav li a {
+    color: black !important;
+}
+
+.display-4 {
+    text-align: center;
+}
+
+.lead {
+    text-align: center;
+}
+
+#featuredvehicles {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#vehicleimage{
+    width: 200px;    
+}
+
+#vehicledetailimage {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    padding-right: 10px;
+}
+
+#modeldetailimage {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    padding-right: 10px;
+}
+
+#yearmakemodel {
+    padding-left: 50px;
+    font-weight: bold;
+}
+
+#details {
+    font-weight:bold;
+}
+
+#space {
+    margin-top: 20px;
+}
+
+#searchlabel {
+    font-weight: bold;
+}
+
+#newvehiclesearch {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#salesreportsearch {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#usedvehiclesearch {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#availablevehiclesearch {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#makemodelyearsearch {
+    margin: 8px;
+}
+
+#minprice{
+    margin:8px;
+}
+#maxprice {
+    margin: 8px;
+}
+
+#minyear{
+    margin:8px;
+}
+#maxyear{
+    margin:8px;
+}
+
+#searchbutton{
+    text-align: center;
+}
+
+.form-control {
+    display: inline-block !important;
+}
+
+.container {
+    width: 100%;
+}
+
+#specialname {
+    font-weight: bold;
+}
+
+#specialsstock {
+    max-height: 100px;
+}
+
+#specials {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#vehicledetails {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#modeldetails {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#navbarDropdown {
+    color: black !important;
+}
+
+#adminvehicles {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#adminquicksearch {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+span {
+    display: inline-block;
+    margin: 2px;
+}
+
+#usedvehicles th {
+    padding-left: 50px;
+}
+
+#newvehicles th {
+    padding-left: 50px;
+}
+
+#avehicles th {
+    padding-left: 50px;
+}
+
+#availablevehicles th {
+    padding-left: 50px;
+}
+
+#usedvehicles table {
+    float: left;
+}
+
+#newvehicles table {
+    float: left;
+}
+
+#avehicles table {
+    float: left;
+}
+
+#availablevehicles table {
+    float: left;
+}
+
+#usedvehicles table img {
+    float: left;
+    width: 200px;
+    margin: 20px;
+    max-width: 175px;
+}
+
+#newvehicles table img {
+    float: left;
+    width: 200px;
+    margin: 20px;
+    max-width: 175px;
+}
+
+#avehicles table img {
+    float: left;
+    width: 200px;
+    margin: 20px;
+    max-width: 175px;
+}
+
+#availablevehicles table img {
+    float: left;
+    width: 200px;
+    margin: 20px;
+    max-width: 175px;
+}
+
+
+#floatleft {
+    width: 100%;
+    display: inline-block;
+    border: 2px solid;
+}
+
+#floatright {
+    float: right;
+}
+
+#table2 td {
+    padding-right: 95px;
+    padding-bottom: 20px;
+}
+
+#usedvehicle {
+    border: 2px solid;
+}
+
+#newvehicle {
+    border: 2px solid;
+}
+
+#usedvehicles {
+    margin: 5px;
+    padding: 10px;
+}
+
+#newvehicles {
+    margin: 5px;
+    padding: 10px;
+}
+
+#availablevehicles {
+    margin: 5px;
+    padding: 10px;
+}
+
+.row {
+    margin-right: -35px;
+    margin-left: -26px;
+}
+
+#specialscarousel {
+    cursor: pointer;
+}
+
+#purchasevehicles {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+
+}
+
+.form-inline label {
+    margin: 10px;
+}
+
+#savemake {
+    margin-left: 10px;
+}
+
+#carmakeform {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#vehicletable {
+    display: inline-block;
+    float: left;
+}
+
+#deletebutton {
+    margin-right: 10px;
+}
+
+#specialform {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+#specials td{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#salesreport table {
+    table-layout: fixed;
+    width: 60%;
+}
+
+#report td {
+    width: 20%;
+}
+
+#report tr {
+    padding-right: 5px;
+}

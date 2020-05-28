@@ -1,0 +1,137 @@
+﻿@model CarDealership.UI.Models.SalesReportViewModel
+@{
+    ViewBag.Title = "SalesReport";
+}
+<div class="row" id="space"></div>
+<h2>Sales Report</h2>
+<div class="row" id="space"></div>
+<div class="container" id="salesreportsearch">
+    <div class="col-md-8 col-lg-12 col-xl-12">
+        <div class="col-xl-12" id="searchlabel">
+            <p>Filters</p>
+        </div>
+        <div class="col-xl-12">
+            <form>
+                <div class="row">
+                    <div class="col-xl-3" id="usersearch">
+                        <div class="form-group">
+                            <div for="userinput">User</div>
+                            @Html.DropDownListFor(m => Model.UserName, Model.Users, "-- All --", new { @id = "userName", @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-xl-3" id="begindatesearch">
+                        <div class="form-group">
+                            <div for="beginyearinput">From Date</div>
+                            <input type="date" id="begindate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-xl-3" id="enddatesearch">
+                        <div class="form-group">
+                            <div for="endyearinput">To Date</div>
+                            <input type="date" id="enddate" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="reportbutton">
+                    <div class="col">
+                        <button type="button" id="salessearchbutton" class="btn-btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row" id="space"></div>
+<div class="container">
+    <h2>Search Results</h2>
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="container" id="salesreport">
+            <table class="table" id="salesreporttable">
+                <thead>
+                    <tr col-xl-6>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Total Sales</th>
+                        <th scope="col">Total Vehicles</th>
+                    </tr>
+                </thead>
+            </table>
+            <table class="table" id="report"></table>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+    });
+
+    $('#salessearchbutton').click(function () {
+
+        loadSalesReport();
+    })
+
+    function loadSalesReport() {
+
+        var salesreport = $('#report');
+
+        salesreport.empty();
+
+        var userLastName = $('#userName').val();
+
+        if (userLastName == '') {
+            userLastName = '0';
+        }
+
+        var bDate = $('#begindate').val();
+
+        if (bDate == '') {
+            var startDate = 0
+        }
+        else {
+            startDate = new Date(bDate).toDateString();
+        }
+         
+
+        var eDate = $('#enddate').val();
+
+        if (eDate == '') {
+            var endDate = 0
+        }
+        else {
+            endDate = new Date(eDate).toDateString();
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:55044/admin/salesreport/search' + '/' + userLastName + '/' + startDate + '/' + endDate,
+            success: function (data, status) {
+                $.each(data, function (index, report) {
+                    var username = report.UserName;
+                    var totalsales = report.TotalSales;
+                    var totalvehicles = report.TotalVehicles;
+
+                    row = '<tbody>'
+                    row += '<tr>'
+                    row += '<td>' + username + '</td>';
+                    row += '<td>' + '$' + totalsales + '</td>';
+                    row += '<td>' + totalvehicles + '</td>';
+                    row += '</tr>'
+                    row += '</tbody>'
+                    row += '</table>'
+
+                    salesreport.append(row);
+
+                });
+            },
+            error: function () {
+                $('#errorMessages')
+                    .append($('<li>')
+                        .attr({ class: 'list-group-item list-group-item-danger' })
+                        .text('Error calling web service. Please try again later.'));
+            }
+        });
+
+    }
+
+
+</script>

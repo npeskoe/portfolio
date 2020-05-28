@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CarDealership.UI.Models.FeaturedSpecialsViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container" id="specialscarousel">
+    <div class="row">
+        <div class="col-xl-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="jumbotron">
+                            <h1 class="display-4">Huge Sale!</h1>
+                            <p class="lead">We are having a giant sale this weekend!</p>
+                        </div>
+                    </div>
+                    @foreach (var special in Model)
+                    {
+                        if (!String.IsNullOrEmpty(special.SpecialName))
+                        {
+                            <div class="carousel-item">
+                                <div class="jumbotron">
+                                    <h1 class="display-4">@special.SpecialName</h1>
+                                    <p class="lead">@special.SpecialDescription</p>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class=container>
+    <div class="row">
+        <h2>Featured Vehicles:</h2>
+    </div>
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="row">
+                @foreach (var vehicle in Model)
+                {
+                    if (!String.IsNullOrEmpty(vehicle.MakeName))
+                    {
+                        <input type="hidden" name="VehicleID" id="vID" value="@vehicle.VehicleID" />
+                        <div class="col-xl-3 col-md-4 col-xs-12">
+                            <div id="featuredvehicles">
+                                <img src="@Url.Content("~/Images/" + vehicle.ImageFileName)" onclick="location.href ='@Url.Action("Details", "Inventory", new { @id = vehicle.VehicleID })'" id="vehicleimage" />
+                                <p>@vehicle.YearBuilt @vehicle.MakeName @vehicle.ModelName</p>
+                                @vehicle.SalesPrice.ToString("c")
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        showSpecials();
+    });
+
+    function showSpecials() {
+        $('#specialscarousel').click(function (event) {
+            window.location = "home/specials";
+        })
+    }
+
+</script>

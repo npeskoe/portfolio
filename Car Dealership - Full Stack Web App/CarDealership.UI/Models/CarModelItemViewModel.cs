@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace CarDealership.UI.Models
+{
+    public class CarModelItemViewModel
+    {
+        public SelectList CarMakeNames { get; set; }
+        public int MakeID { get; set; }
+        public string MakeName { get; set; }
+        public int ModelID { get; set; }
+        public string ModelName { get; set; }
+        public DateTime DateAdded { get; set; }
+        public string Email { get; set; }
+    }
+}

@@ -1,0 +1,72 @@
+﻿@model CarDealership.Models.Tables.ContactUsRequest
+
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="row" id="space"></div>
+<h2>Contact Us</h2>
+<div class="row" id="space"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5">
+            @using (Html.BeginForm("InsertContactUsRequest", "Home", FormMethod.Post))
+            {
+            <div class="form-group">
+                <div>Name</div>
+                @Html.TextBoxFor(m => m.ContactName, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.ContactName)</span>
+            </div>
+            <div class="form-group">
+                <div>Email</div>
+                @Html.TextBoxFor(m => m.ContactEmail, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.ContactEmail)</span>
+
+            </div>
+            <div class="form-group">
+                <div>Phone</div>
+                @Html.TextBoxFor(m => m.ContactPhone, new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.ContactPhone)</span>
+            </div>
+                <div class="form-group">
+                    <div>Message</div>
+                    @Html.TextAreaFor(m => m.ContactMessage, new { @id = "message", @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(m => m.ContactMessage)</span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("InsertContactUsRequest")'" />
+                </div>
+            }
+        </div>
+        <div class="col-xl-4">
+            <div class="row">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6265.997236212178!2d-85.70481746785563!3d38.25633809208081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8869734178fec373%3A0x645255545beb2bf4!2s200%20Idlewylde%20Dr%2C%20Louisville%2C%20KY%2040206!5e0!3m2!1sen!2sus!4v1588000967915!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="row">
+                <p><div>200 Idlewylde Dr</div></p>
+            </div>
+            <div class="row">
+                <p>Louisville, KY 40206</p>
+            </div>
+            <div class="row">
+                <p><div>Sales: 502-111-1111</div></p>
+            </div>
+            <div class="row"
+                <p>Service: 502-111-1112</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        var vin = localStorage.getItem(vin);
+
+        $('#message').append(localStorage.getItem("VINNumber"));
+
+        localStorage.clear();
+
+    });
+
+
+
+</script>

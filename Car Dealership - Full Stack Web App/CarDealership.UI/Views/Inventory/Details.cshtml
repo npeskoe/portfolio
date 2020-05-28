@@ -1,0 +1,78 @@
+﻿@model CarDealership.Models.Queries.VehicleItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row" id="space"></div>
+<div class="row">
+    <div class="col-xl-12">
+        <h2>Vehicle Details</h2>
+    </div>
+</div>
+<div class="row" id="space"></div>
+<div class="container" id="vehicledetails">
+    <div class="row" id="yearmakemodel">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <span id="details">@Model.YearBuilt @Model.MakeName @Model.ModelName</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-2">
+            <img src="@Url.Content("~/Images/" + Model.ImageFileName)" id="vehicledetailimage" />
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-2">
+            <p><span id="details">Body Style: </span>@Model.BodyTypeName</p>
+            <p><span id="details">Trans: </span>@Model.TransmissionTypeName</p>
+            <p><span id="details">Color: </span>@Model.ExtColorName</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            <p><span id="details">Interior: </span>@Model.IntColorName</p>
+            <p><span id="details">Mileage: </span>@Model.Mileage</p>
+            <p id="vinDetails"><span id="details">VIN #: </span>@Model.VINNumber</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-5">
+            <p><span id="details">Sale Price: </span>@Model.SalesPrice.ToString("c")</p>
+            <p><span id="details">MSRP: </span>@Model.MSRP.ToString("c")</p>
+        </div>
+    </div>
+    <div class="row" id="space"></div>
+    <div class="row">
+        <div class="col-xl-2">
+        </div>
+        <div class="col-xl-10">
+            <p><span id="details">Description: </span>@Model.VehicleDescription</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-7">
+        </div>
+        <div class="col-xl-5">
+
+            @if (Model.IsSold == true)
+            {
+                <p>Unavailable - Sold</p>
+            }
+            else
+            {
+                <button onclick="location.href='/home/contact'" type="button" class="btn-default" id="contactusbutton">Contact Us</button>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        localStorage.clear();
+    });
+
+    $('#contactusbutton').click(function () {
+
+        var vin = document.getElementById('vinDetails').innerHTML;
+
+        localStorage.setItem("VINNumber", vin);
+
+    })
+
+</script>
