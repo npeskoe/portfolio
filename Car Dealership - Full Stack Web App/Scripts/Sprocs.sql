@@ -747,7 +747,7 @@ AS
 
 SELECT SalesInformation.SalesID, SalesInformation.CustomerName, SalesInformation.CustomerPhone, SalesInformation.CustomerEmail, SalesInformation.CustomerStreet1,
 SalesInformation.CustomerStreet2,SalesInformation.CustomerCity, SalesInformation.CustomerState, SalesInformation.CustomerZip, SalesInformation.PurchasePrice,
-SalesInformation.PurchaseTypeID, SalesInformation.VehicleID, SalesInformation.Id, CONCAT(AspNetUsers.FirstName, ' ', AspNetUsers.LastName) as UserName
+SalesInformation.PurchaseTypeID, SalesInformation.VehicleID, SalesInformation.PurchaseDate, SalesInformation.Id, CONCAT(AspNetUsers.FirstName, ' ', AspNetUsers.LastName) as UserName
 FROM SalesInformation
 JOIN AspNetUsers ON
 SalesInformation.Id = AspNetUsers.Id

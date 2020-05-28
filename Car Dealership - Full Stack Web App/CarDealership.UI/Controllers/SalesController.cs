@@ -100,7 +100,7 @@ namespace CarDealership.UI.Controllers
 
                 repo.Insert(sale);
 
-                return View("Index", model);
+                return RedirectToAction("Index");
 
             }
             else

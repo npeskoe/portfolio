@@ -66,7 +66,7 @@ namespace CarDealership.UI.Controllers
             {
                 repo.Insert(request);
 
-                return View("Index");
+                return RedirectToAction("Index");
             }
 
             return View("Contact", request);

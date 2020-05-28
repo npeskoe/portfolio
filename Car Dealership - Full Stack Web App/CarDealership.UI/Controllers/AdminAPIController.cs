@@ -197,20 +197,11 @@ namespace CarDealership.UI.Controllers
 
             var sales = repo.GetSales();
 
+            List<SalesInformation> salesResults = new List<SalesInformation>();
+
             var userRepo = UsersRepositoryFactory.GetRepository();
 
             var users = userRepo.GetAll();
-
-            List<SalesReport> salesResults = new List<SalesReport>();
-
-            List<SalesReport> results = sales.GroupBy(s => s.Id)
-                                        .Select(us => new SalesReport
-                                        {
-                                            UserName = us.Select(x => x.UserName).FirstOrDefault(),
-                                            TotalSales = us.Sum(x => x.PurchasePrice),
-                                            TotalVehicles = us.Select(x => x.SalesID).Count(),
-                                            PurchaseDate = us.Select(x => x.PurchaseDate).FirstOrDefault()
-                                        }).ToList();
 
             var username = (from s in sales
                             where s.UserName.Contains(user)
@@ -219,9 +210,9 @@ namespace CarDealership.UI.Controllers
             if (user != "0")
             {
 
-                salesResults = (from r in results
-                                                  where username == r.UserName
-                                                  select r).ToList();
+                salesResults = (from r in sales
+                                where username == r.UserName
+                                select r).ToList();
 
                 if (salesResults.Count == 0)
                 {
@@ -230,15 +221,16 @@ namespace CarDealership.UI.Controllers
             }
             else
             {
-                salesResults = results;
+                salesResults = sales;
             }
+
             if (startDate != "0")
             {
                 var beginDate = DateTime.Parse(startDate);
 
                 var correctDate = beginDate.AddDays(1);
 
-                var bDateResults = (from r in results
+                var bDateResults = (from r in salesResults
                                     where r.PurchaseDate >= correctDate
                                     select r).ToList();
 
@@ -250,15 +242,25 @@ namespace CarDealership.UI.Controllers
 
                 var cDate = stopDate.AddDays(1);
 
-                var eDateResults = (from r in results
+                var eDateResults = (from r in salesResults
                                     where r.PurchaseDate <= cDate
                                     select r).ToList();
 
                 salesResults = eDateResults;
+
             }
             try
             {
-                return Ok(salesResults);
+                List<SalesReport> results = salesResults.GroupBy(s => s.Id)
+                                           .Select(us => new SalesReport
+                                           {
+                                               UserName = us.Select(x => x.UserName).FirstOrDefault(),
+                                               TotalSales = us.Sum(x => x.PurchasePrice),
+                                               TotalVehicles = us.Select(x => x.SalesID).Count(),
+                                               PurchaseDate = us.Select(x => x.PurchaseDate).FirstOrDefault()
+                                           }).ToList();
+
+                return Ok(results);
             }
             catch (Exception ex)
             {
