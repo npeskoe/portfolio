@@ -1,0 +1,59 @@
+﻿@model CashHomeBuyer.Models.Contact
+
+@{
+    ViewBag.Title = "Our Process";
+}
+<h2 id="process_head">Our Process to Sell Your Louisville Home</h2>
+
+<section id="process_items">
+    <div class="row">
+        <div class="col-xl-1"><p><i class="fas fa-clipboard-list fa-3x" id="process_icon"></i></div>
+        <div class="col"><strong>Step One:</strong> Give us a call at 502-439-1404 or fill out our <a href="@Url.Action("Index", "Home")#offer_form">confidential form</a> to receive an all cash as-is offer.</div>
+    </div>
+    <div class="row">
+        <div class="col-xl-1"><p><i class="fas fa-laptop-house fa-3x" id="process_icon"></i></div>
+        <div class="col"><strong>Step Two:</strong> If your home meets our buying criteria, we will tour your home virtually or in person.</div>
+    </div>
+    <div class="row">
+        <div class="col-xl-1"><p><i class="fas fa-search-location fa-3x" id="process_icon"></i></div>
+        <div class="col"><strong>Step Three:</strong> We research the neigborhood to determine a fair market value, taking into account needed repairs.</div>
+    </div>
+    <div class="row">
+        <div class="col-xl-1"><p><i class="far fa-money-bill-alt fa-3x" id="process_icon"></i></div>
+        <div class="col"><strong>Step Four:</strong> Get Paid! - We will set up a closing done by a professional title company and close on the date and time that is convenient for you.</div>
+    </div>
+</section>
+<section id="process_description">
+    <p>We help property owners in all types of situations. By selling your Louisville home to us for cash, you are able to close much faster and with less hassle than a traditional sale.
+    If you would like to speak to us in person before filling out the form, please call 502-439-1404.</p>
+</section>
+<section id="offer_form">
+    <h2>GET AN OFFER NOW!</h2>
+    @Html.ValidationSummary();
+    <div class="container">
+        @using (Html.BeginForm("InsertContact", "Home", FormMethod.Post))
+        {
+            <div class="row form-group">
+                <div class="col-xl-3"></div>
+                <div class="col-xl-6">@Html.TextBoxFor(m => Model.ContactAddress, new { @placeholder = "Property Address", @class = "form-control" })</div>
+                <div class="col-xl-3"></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xl-3"></div>
+                <div class="col">@Html.TextBoxFor(m => Model.ContactName, new { @placeholder = "Name", @class = "form-control" })</div>
+                <div class="col">@Html.TextBoxFor(m => Model.ContactEmail, new { @placeholder = "Email", @class = "form-control" })</div>
+                <div class="col-xl-3"></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xl-4"></div>
+                <div class="col-xl-4">@Html.TextBoxFor(m => Model.ContactPhone, new { @placeholder = "Phone", @class = "form-control" })</div>
+                <div class="col-xl-4"></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xl-5"></div>
+                <div class="col-xl-3"><button class="btn btn-outline-secondary"><i class="fas fa-download mr-2"></i>Get Your Offer!</button></div>
+                <div class="col-xl-4"></div>
+            </div>
+        }
+    </div>
+</section>
