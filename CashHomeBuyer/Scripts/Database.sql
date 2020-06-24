@@ -1,0 +1,14 @@
+USE master
+GO
+
+IF EXISTS(SELECT * FROM sys.databases WHERE name='MGAHomes')
+DROP DATABASE MGAHomes
+GO
+
+CREATE DATABASE MGAHomes
+GO
+
+USE MGAHomes
+GO
+
+

@@ -1,0 +1,149 @@
+﻿body {
+    padding-bottom: 20px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-text {
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#process_title p {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    padding-bottom: 25px;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+}
+
+#process {
+    padding-top: 20px;
+    font-size: larger;
+}
+
+#process_body img {
+    height: 200px;
+    margin: 20px;
+}
+
+#home_icon {
+    padding-bottom: 20px;
+}
+
+#offer_form {
+    padding-top: 115px;
+    margin-top: -115px;
+}
+
+    #offer_form h2 {
+        text-align: center;
+        margin: 10px;
+    }
+
+#process_head {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#faq_head {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#about_head {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#process_items {
+    font-size: larger;
+}
+
+    #process_items p {
+        padding-bottom: 20px;
+    }
+
+#admin_head {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#faq p {
+    padding-bottom: 10px;
+}
+
+#about {
+    padding-top: 25px;
+}
+
+    #about h1 {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+.jumbotron {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+    #jumbo_head {
+        margin-top: 25px;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .jumbotron h1 {
+        color: white;
+        font-size: 47pt;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .jumbotron h4 {
+        color: white;
+        font-weight: bold;
+    }
+
+    .jumbotron p {
+        color: white;
+        font-weight: bold;
+        font-size: 14pt;
+    }
+
+    #savebutton {
+        margin: 10px;
+    }
+
+    #edit_form .form-row {
+        padding: 10px;
+    }
+
+    #edit_form textarea {
+        width: 400px;
+        height: 100px;
+    }
+
+    .text-danger {
+        
+    }
